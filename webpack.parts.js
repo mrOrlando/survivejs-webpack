@@ -1,4 +1,5 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const PurifyCSSPlugin = require('purifycss-webpack');
 
 exports.devServer = ({ host, port } = {}) => ({
   devServer: {
@@ -90,4 +91,22 @@ exports.autoprefix = () => ({
       require('autoprefixer')(),
     ]),
   },
+});
+
+// plugin should be applied after ExtractTextPlugin.
+exports.purifyCSS = ({ paths }) => ({
+  plugins: [
+    // Using PurifyCSS loses CSS source maps
+    new PurifyCSSPlugin({
+      paths,
+      purifyOptions: {
+        minify: true,
+        whitelist: [
+          '.pure-menu-list',
+          '.pure-menu-item',
+          '.pure-menu-link',
+        ],
+      },
+    }),
+  ]
 });
