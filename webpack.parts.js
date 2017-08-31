@@ -110,3 +110,25 @@ exports.purifyCSS = ({ paths }) => ({
     }),
   ]
 });
+
+// Stylelint can be treated as a PostCSS plugin,
+// but it can also be used through stylelint-webpack-plugin.
+exports.lintCSS = ({ include, exclude }) => ({
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        include,
+        exclude,
+        enforce: 'pre',
+
+        loader: 'postcss-loader',
+        options: {
+          plugins: () => ([
+            require('stylelint')(),
+          ]),
+        },
+      },
+    ],
+  },
+});

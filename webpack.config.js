@@ -51,6 +51,7 @@ const commonConfig = merge([
       emitWarnings: true,
     },
   }),
+  parts.lintCSS({ include: PATHS.app }),
 ]);
 
 const productionConfig = merge([
