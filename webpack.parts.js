@@ -53,7 +53,7 @@ exports.loadCSS = ({ include, exclude } = {}) => ({
         include,
         exclude,
 
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader'], // read as style(css(input))
       },
     ],
   },
@@ -127,6 +127,24 @@ exports.lintCSS = ({ include, exclude }) => ({
           plugins: () => ([
             require('stylelint')(),
           ]),
+        },
+      },
+    ],
+  },
+});
+
+exports.loadImages = ({ include, exclude, options } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpg|svg)$/,
+        include,
+        exclude,
+
+        use: {
+          // implicitly uses file-loader, if limit is exceeded
+          loader: 'url-loader',
+          options,
         },
       },
     ],
