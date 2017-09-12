@@ -77,8 +77,8 @@ exports.extractCSS = ({ include, exclude, use }) => {
             use,
             fallback: 'style-loader',
           }),
-        }
-      ]
+        },
+      ],
     },
     plugins: [ plugin ],
   };
@@ -108,7 +108,7 @@ exports.purifyCSS = ({ paths }) => ({
         ],
       },
     }),
-  ]
+  ],
 });
 
 // Stylelint can be treated as a PostCSS plugin,
@@ -144,6 +144,22 @@ exports.loadImages = ({ include, exclude, options } = {}) => ({
         use: {
           // implicitly uses file-loader, if limit is exceeded
           loader: 'url-loader',
+          options,
+        },
+      },
+    ],
+  },
+});
+
+exports.loadFonts = ({ include, exclude, options } = {}) => ({
+  module: {
+    rules: [
+      {
+        test: /\.(eot|ttf|woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        include,
+        exclude,
+        use: {
+          loader: 'file-loader',
           options,
         },
       },

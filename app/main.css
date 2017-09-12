@@ -4,4 +4,5 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
+  padding: 10px;
 }

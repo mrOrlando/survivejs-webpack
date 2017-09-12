@@ -40,8 +40,8 @@ const commonConfig = merge([
               filePath: 'checkstyle.xml',
               formatter: require('eslint/lib/formatters/checkstyle'),
             },
-          }
-        }
+          },
+        },
       }),
     ],
   },
@@ -52,6 +52,11 @@ const commonConfig = merge([
     },
   }),
   parts.lintCSS({ include: PATHS.app }),
+  parts.loadFonts({
+    options: {
+      name: '[name].[ext]',
+    },
+  }),
 ]);
 
 const productionConfig = merge([
