@@ -83,7 +83,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 document.body.appendChild(Object(__WEBPACK_IMPORTED_MODULE_2__component__["a" /* default */])('Hi Webpack!'));
 
-
 /***/ }),
 /* 1 */
 /***/ (function(module, exports) {
@@ -110,7 +109,6 @@ document.body.appendChild(Object(__WEBPACK_IMPORTED_MODULE_2__component__["a" /*
 
   return element;
 });
-
 
 /***/ }),
 /* 4 */
