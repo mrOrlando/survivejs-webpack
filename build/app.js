@@ -100,8 +100,10 @@ document.body.appendChild(Object(__WEBPACK_IMPORTED_MODULE_2__component__["a" /*
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ((text = 'Hello world') => {
-  const element = document.createElement('div');
+/* harmony default export */ __webpack_exports__["a"] = (function () {
+  var text = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Hello world';
+
+  var element = document.createElement('div');
 
   // element.className = 'pure-button';
   element.className = 'fa fa-hand-spock-o fa-lg';
@@ -118,3 +120,4 @@ document.body.appendChild(Object(__WEBPACK_IMPORTED_MODULE_2__component__["a" /*
 
 /***/ })
 /******/ ]);
+//# sourceMappingURL=app.js.map
