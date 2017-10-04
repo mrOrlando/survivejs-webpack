@@ -24,6 +24,8 @@
     * Loading Images
     * Loading Fonts
     * Loading JavaScript
+* Building
+    * Source Maps
 
 Instructions how to launch this project:
 
