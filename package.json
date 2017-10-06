@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
-    "purecss": "^1.0.0"
+    "purecss": "^1.0.0",
+    "react": "^16.0.0"
   }
 }

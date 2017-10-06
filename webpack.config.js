@@ -61,6 +61,16 @@ const commonConfig = merge([
 ]);
 
 const productionConfig = merge([
+  {
+    entry: {
+      vendor: ['react'],
+    },
+  },
+  parts.extractBundles([
+    {
+      name: 'vendor',
+    },
+  ]),
   parts.generateSourceMaps({ type: 'source-map' }),
   parts.extractCSS({
     use: ['css-loader', parts.autoprefix()],
